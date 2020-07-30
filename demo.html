@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./dist/lodop-printer.js"></script>
+</head>
+<body>
+  <button id="print">打印</button>
+  <script>
+    document.getElementById('print').addEventListener('click', function(){
+      
+      LodopPrinter.PRINT({
+        orderTime: '2020-09-09 20:00', //订单时间
+        money: 234.67, //支付金额
+        receiver: '张阳', //收货人
+        phone: '133****3456', //联系电话
+        siteName : '新世界百货店', // 自提点,
+        sitePhone : '18888888888', //自提点电话,
+        shoppingList : [{
+          name: '商品名称商品名称商品名称',
+          num: 1,
+          money: 34.56
+        }, {
+          name: '商品名称商品名称商品名称2',
+          num: 3,
+          money: 3.78
+        }, {
+          name: '商品名称商品名称商品名称3',
+          num: 30,
+          money: 340.56
+        }] //自提点
+      })
+    });
+  </script>
+</body>
+</html>
