@@ -4,6 +4,7 @@ import getLodop from './LodopFuncs'
 const draw = (LODOP, options = {}) => {
   
   const {
+    district = '',
     orderTime = '', //订单时间
     money = 0, //支付金额
     receiver = '', //收货人
@@ -18,6 +19,8 @@ const draw = (LODOP, options = {}) => {
   LODOP.SET_PRINT_MODE("POS_BASEON_PAPER", true);
   LODOP.SET_PRINT_STYLE("FontSize", 24);
   LODOP.ADD_PRINT_TEXT(0, 0, 580, 40,"省的多");
+  LODOP.SET_PRINT_STYLE("FontSize", 16);
+  LODOP.ADD_PRINT_TEXT(10, 160, 580, 30, district);
   LODOP.SET_PRINT_STYLE("FontSize", 12);
   LODOP.ADD_PRINT_TEXT(40, 0, 580, 20,"下单时间：" + orderTime);  
   LODOP.ADD_PRINT_TEXT(60, 0, 580, 20,"支付金额：" + money);  
