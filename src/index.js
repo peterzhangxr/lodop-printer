@@ -9,6 +9,7 @@ const draw = (LODOP, options = {}) => {
     money = 0, //支付金额
     receiver = '', //收货人
     phone = '', //联系电话
+    address = '',
     siteName = '', // 自提点,
     sitePhone = '', //自提点电话,
     shoppingList = [{}], //自提点
@@ -25,9 +26,14 @@ const draw = (LODOP, options = {}) => {
   LODOP.ADD_PRINT_TEXT(40, 0, 580, 20,"下单时间：" + orderTime);  
   LODOP.ADD_PRINT_TEXT(60, 0, 580, 20,"支付金额：" + money);  
   LODOP.ADD_PRINT_TEXT(80, 0, 580, 20,"收货人：" + receiver);  
-  LODOP.ADD_PRINT_TEXT(100, 0, 580, 20,"电话：" + phone);  
-  LODOP.ADD_PRINT_TEXT(120, 0, 580, 20,"自提点：" + siteName);  
-  LODOP.ADD_PRINT_TEXT(140, 0, 580, 20,"自提点电话：" + sitePhone);  
+  LODOP.ADD_PRINT_TEXT(100, 0, 580, 20,"电话：" + phone);
+  if (address) {
+    LODOP.ADD_PRINT_TEXT(120, 0, 580, 40,"收货地址：" + address);  
+  } else {
+    LODOP.ADD_PRINT_TEXT(120, 0, 580, 20,"自提点：" + siteName);  
+    LODOP.ADD_PRINT_TEXT(140, 0, 580, 20,"自提点电话：" + sitePhone);
+  }
+
   LODOP.ADD_PRINT_LINE(170, 0, 170, 580)
   LODOP.ADD_PRINT_TEXT(180, 60, 580, 20,"----购物清单----");
 
